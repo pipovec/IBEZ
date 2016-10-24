@@ -1,0 +1,8 @@
+LIBFLAGS:= -L/usr/lib/x86_64-linux-gnu 
+CPPFLAGS:= --std=c++11 -Wall -I/usr/include/postgresql
+
+analyza: analyza.o 
+	$(CXX)  -o  ./analyza analyza.o $(LIBFLAGS)
+
+analyza.o:	./analyza.cpp   
+	$(CXX) -c $(CPPFLAGS)  ./analyza.cpp  -o ./analyza.o
